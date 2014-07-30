@@ -25,5 +25,4 @@ build/Release
 node_modules
 
 # Meteor
-.meteor
 packages
