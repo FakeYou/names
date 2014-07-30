@@ -1,10 +1,12 @@
+'use strict';
+
 var https = Meteor.require('https');
 var http = Meteor.require('http');
 
-app.api._base = {
+App.api._base = {
 
 	httpGet: function(url, cb) {
-		var req = http.get(url, function(res) {
+		http.get(url, function(res) {
 			var chunks = [];
 
 			res.on('data', function(chunk) {
@@ -20,7 +22,7 @@ app.api._base = {
 	},
 
 	httpsGet: function(url, cb) {
-		var req = https.get(url, function(res) {
+		https.get(url, function(res) {
 			var chunks = [];
 
 			res.on('data', function(chunk) {
@@ -35,4 +37,4 @@ app.api._base = {
 		});
 	}
 
-}
+};

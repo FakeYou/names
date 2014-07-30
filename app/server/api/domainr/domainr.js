@@ -1,8 +1,9 @@
-var https = Meteor.require('https');
+'use strict';
+
 var url = Meteor.require('url');
 var Future = Npm.require('fibers/future');
 
-app.api.domainr = {
+App.api.domainr = {
 
 	search: function(term) {
 
@@ -15,7 +16,7 @@ app.api.domainr = {
 			query: { q: term }
 		});
 
-		app.api._base.httpsGet(requestUrl, function(err, result) {
+		App.api._base.httpsGet(requestUrl, function(err, result) {
 			var domains = JSON.parse(result);
 
 			var names = _.map(domains.results, function(domain) {
@@ -37,7 +38,7 @@ app.api.domainr = {
 			names = _.filter(names, function(name) { return !_.isUndefined(name); });
 
 			future.return(names);
-		})
+		});
 
 		return future.wait();
 	}

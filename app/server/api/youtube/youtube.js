@@ -1,15 +1,16 @@
-var https = Meteor.require('https');
+'use strict';
+
 var url = Meteor.require('url');
 var Future = Npm.require('fibers/future');
 
-app.api.youtube = {
+App.api.youtube = {
 
 	_key: 'AIzaSyDmiLJsQ3xTHRBufW13b3KzsErx9oDtdXE',
 
 	search: function(term) {
 		var future = new Future();
 
-		var term = term.replace(/\ /g, '');
+		term = term.replace(/\ /g, '');
 
 		var requestUrl = url.format({
 			protocol: 'https',
@@ -18,13 +19,14 @@ app.api.youtube = {
 			query: {
 				part: 'snippet',
 				forUsername: term,
-				key: app.api.youtube._key
+				key: App.api.youtube._key
 			}
 		});
 
-		app.api._base.httpsGet(requestUrl, function(err, result) {
-			var result = JSON.parse(result);
+		App.api._base.httpsGet(requestUrl, function(err, result) {
 			var names = [];
+			
+			result = JSON.parse(result);
 
 			if(result.items.length === 0) {
 				names.push({
@@ -57,4 +59,4 @@ app.api.youtube = {
 		return future.wait();
 	}
 
-}
+};
