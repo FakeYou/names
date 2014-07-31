@@ -1,0 +1,11 @@
+<template name="provider">
+	{{call}}
+
+	<h4>{{name}}</h4>
+	{{#each results}}
+		<div class="{{availabilityBackground}}" style="padding: 10px 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.025)">
+			<span class="pull-right">{{availabilityText}}</span>
+			<a href="{{url}}" target="_blank">{{name}}</a>
+		</div>
+	{{/each}}
+</template>

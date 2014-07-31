@@ -7,6 +7,6 @@ Template.search.events({
 		var $form = $(e.target);
 		var value = $form.find('input[name=search]').val();
 
-		App.categories.internet(value);
+		Session.set('searchTerm', value);
 	}
 });

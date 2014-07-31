@@ -10,10 +10,13 @@
     "App": true,
     "Buffer": true,
     "console": true,
+    "Deps": true,
     "Meteor": true,
     "Npm": true,
     "Router": true,
-    "Template": true
+    "Session": true,
+    "Template": true,
+    "UI": true
   },
   "globalstrict": true,
   "quotmark": true,
