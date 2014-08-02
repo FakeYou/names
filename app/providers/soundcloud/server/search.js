@@ -37,7 +37,6 @@ App.providers.soundcloud.search = function(term) {
 		}
 		else {
 			names = _.map(result.users.user, function(item) {
-				console.log(item);
 				return {
 					name:         item.username[0],
 					availability: App.status.TAKEN,
@@ -45,8 +44,6 @@ App.providers.soundcloud.search = function(term) {
 				};
 			});
 		}
-
-		console.log(names);
 
 		future.return(names);
 	});
