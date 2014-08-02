@@ -24,8 +24,6 @@ Template.provider.call = function() {
 };
 
 Template.provider.results = function() {
-	console.log(this);
-
 	resultsDep.depend();
 
 	return results[this.name];
