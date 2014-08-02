@@ -1,6 +1,7 @@
 'use strict';
 
 var results = {};
+var resultLoading = false;
 var resultsDep = new Deps.Dependency();
 
 Template.provider.call = function() {
@@ -12,6 +13,8 @@ Template.provider.call = function() {
 		options.term = Session.get('searchTerm');
 	});
 
+	resultLoading = true;
+
 	Meteor.call('providers/search', this.name, options, function(err, result) {
 		if(err) {
 			console.error(err);
@@ -19,6 +22,7 @@ Template.provider.call = function() {
 		}
 
 		results[self.name] = result;
+		resultLoading = false;
 		resultsDep.changed();
 	});
 };
@@ -28,6 +32,12 @@ Template.provider.results = function() {
 
 	return results[this.name];
 };
+
+Template.provider.loading = function() {
+	resultsDep.depend();
+
+	return resultLoading;
+}
 
 Template.provider.availabilityBackground = function() {
 	var label;

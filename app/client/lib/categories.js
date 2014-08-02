@@ -13,6 +13,12 @@ Meteor.startup(function() {
 			providers: [
 				App.providers.youtube
 			]
+		},
+		music: {
+			name: 'music',
+			providers: [
+				App.providers.soundcloud
+			]
 		}
 	};
-})
+});
