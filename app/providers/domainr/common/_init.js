@@ -5,7 +5,3 @@ App.providers.domainr = {
 	website: 'https://domai.nr/',
 	category: 'internet'
 };
-
-if(Meteor.isServer) {
-
-}
