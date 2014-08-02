@@ -2,6 +2,8 @@
 
 var https = Meteor.require('https');
 var http  = Meteor.require('http');
+var xml2js = Meteor.require('xml2js');
+var Future = Npm.require('fibers/future');
 
 App.providers._base = {
 
@@ -23,13 +25,10 @@ App.providers._base = {
 
 	httpsGet: function(url, cb) {
 
-		console.log(url);
-
 		https.get(url, function(res) {
 			var chunks = [];
 
 			res.on('data', function(chunk) {
-				console.log(chunk.toString());
 				chunks.push(chunk);
 			});
 
@@ -39,6 +38,21 @@ App.providers._base = {
 				cb(null, result);
 			});
 		});
+	},
+
+	parseXml: function(xml) {
+		var future = new Future();
+
+		xml2js.parseString(xml, function(err, result) {
+			if(err) {
+				future.throw(err);
+			}
+			else {
+				future.return(result);
+			}
+		});
+
+		return future.wait();
 	}
 
 };
