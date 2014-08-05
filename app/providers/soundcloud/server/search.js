@@ -14,7 +14,7 @@ App.providers.soundcloud.search = function(term) {
 		pathname: 'users',
 		query:    {
 			q:         term,
-			client_id: App.providers.soundcloud._clientId,
+			client_id: App.settings.providers.soundcloud.clientId,
 			limit:     5
 		}
 	});

@@ -16,7 +16,8 @@
     "Router": true,
     "Session": true,
     "Template": true,
-    "UI": true
+    "UI": true,
+    "Winston": true
   },
   "globalstrict": true,
   "quotmark": true,

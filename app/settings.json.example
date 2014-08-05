@@ -1,0 +1,14 @@
+{
+	"dirs": {
+		"base": "/home/andre/projects/names/app",
+		"logs": "/home/andre/projects/names/logs"
+	},
+	"providers": {
+		"soundcloud": {
+			"clientId": "..."
+		},
+		"youtube": {
+			"apiKey": "..."
+		}
+	}
+}

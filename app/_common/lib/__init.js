@@ -8,3 +8,12 @@ App.status = {
 };
 
 App.providers = {};
+
+App.settings = Meteor.settings;
+
+if(Meteor.isClient) {
+	App.logger = {};
+	App.logger.info = console.info.bind(console);
+	App.logger.warn = console.warn.bind(console);
+	App.logger.error = console.error.bind(console);
+}

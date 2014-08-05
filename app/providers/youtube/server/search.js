@@ -15,7 +15,7 @@ App.providers.youtube.search = function(term) {
 		query:    {
 			part:        'snippet',
 			forUsername: term,
-			key:         App.providers.youtube._key
+			key:         App.settings.providers.youtube.apiKey
 		}
 	});
 

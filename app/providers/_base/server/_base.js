@@ -5,6 +5,8 @@ var http  = Meteor.require('http');
 var xml2js = Meteor.require('xml2js');
 var Future = Npm.require('fibers/future');
 
+App.logger.info('[providers] adding base provider.');
+
 App.providers._base = {
 
 	httpGet: function(url, cb) {
