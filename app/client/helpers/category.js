@@ -1,5 +1,5 @@
-'use strict'; 
+'use strict';
 
-Template.category.providers = function() {	
-	return this.providers;
+Template.category.providers = function() {
+	return this.providers
 };
