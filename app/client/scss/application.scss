@@ -1,0 +1,35 @@
+@import "base";
+
+body {
+	background-color: $background-color;
+}
+
+#content {
+	margin: 140px;
+}
+
+h1 {
+	color: #FFF;
+	text-align: center;
+	font-size: 6em;
+	font-family: $header-font;
+	margin: 80px;
+}
+
+.plain-input {
+	background-color: darken($background-color, 2);
+	border: none;
+	border-bottom: 3px solid darken($background-color, 8);
+	padding: 10px;
+	color: lighten($background-color, 30);
+	font-family: $header-font;
+	font-size: 2em;
+	display: block;
+	margin: 0 auto;
+	outline: none;
+
+	@include placeholder {
+		color: lighten($background-color, 10);
+		font-size: 1em;
+	}
+}

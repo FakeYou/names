@@ -1,0 +1,15 @@
+@import "meyer/_reset";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$header-font: 'Open Sans', 'sans-serif';
+$body-font: 'Open Sans', 'sans-serif';
+
+$background-color: #86D6C9;
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder { @content; } /* Firefox 18- */
+	&::-moz-placeholder { @content; } /* Firefox 19+ */
+	&:-ms-input-placeholder {	@content;	}
+}
