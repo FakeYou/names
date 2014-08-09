@@ -4,8 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "npm": {},
-      "bootstrap-3": {},
-      "winston": {}
+      "winston": {},
+      "scss": {}
     },
     "packages": {
       "iron-router": {
@@ -18,15 +18,15 @@
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
-      "bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v3.2.0-1",
-        "commit": "17a63902fc6cf1096c5289d963c66cf28b474727"
-      },
       "winston": {
         "git": "https://github.com/tomrogers3/meteor-winston.git",
         "tag": "v0.0.3",
         "commit": "60dc02303ca003ef05254f94fbb9bfd40915d5d3"
+      },
+      "scss": {
+        "git": "https://github.com/fourseven/meteor-scss.git",
+        "tag": "v0.9.3",
+        "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

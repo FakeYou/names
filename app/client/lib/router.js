@@ -11,4 +11,10 @@ Router.map(function() {
 		path: '/',
 		template: 'search'
 	});
+
+	this.route('test', {
+		path: '/test',
+		layoutTemplate: null,
+		template: 'test'
+	})
 });

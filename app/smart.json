@@ -2,7 +2,7 @@
   "packages": {
     "iron-router": {},
     "npm": {},
-    "bootstrap-3": {},
-    "winston": {}
+    "winston": {},
+    "scss": {}
   }
 }

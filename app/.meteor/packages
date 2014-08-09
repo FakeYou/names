@@ -9,5 +9,5 @@ insecure
 iron-router
 npm
 underscore
-bootstrap-3
 winston
+scss
